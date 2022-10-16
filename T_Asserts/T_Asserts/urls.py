@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from apis.api import login, signup, CreateTravelInfo, AcceptTravel, CreateRideInfo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/login', login),
+    path('api/signup', signup),
+    path('api/travel-info', CreateTravelInfo),
+    path('api/travel-info/accept', AcceptTravel),
+    path('api/ride-info', CreateRideInfo),
 ]
