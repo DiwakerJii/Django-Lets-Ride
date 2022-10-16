@@ -190,7 +190,7 @@ def CreateRideInfo(request):
                     ride_info_data = created.__dict__
                     del ride_info_data["_state"]
                     ride_info_data["created"] = ride_info_data["created"].strftime("%d %B,%y - %I:%M %p")
-                    ride_info_data["created_by"] = User.objects.filter(uid=int(ride_info_data["created_by"])).values('uid','name','user_name')
+                    ride_info_data["created_by_id"] = User.objects.filter(uid=int(ride_info_data["created_by_id"])).values('uid','name','user_name')
                     return Response({"status":True,"message":"Data succefully created","data":ride_info_data},status=status.HTTP_202_ACCEPTED)
             except Exception as e:
                 pass
