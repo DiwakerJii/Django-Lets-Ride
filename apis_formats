@@ -1,0 +1,58 @@
+
+
+Post    /api/signup    --signup :
+	{
+	    "name" : "Saurabh",
+	    "email" : "Saurabh@gmail.com",
+	    "mobile" : 1234567890,
+	    "user_type" : 1,
+	    "password" : "Pass@123"
+	}
+
+Post  /api/login    --login :
+	{
+	    "email" : "Saurabh@gmail.com",
+	    "password" : "Pass@123"
+	}
+
+
+Get   /api/travel-info    get_travel_data:
+	params: (also works with no params)
+		user_id : int    
+
+Post  /api/travel-info    save travel data:
+	{
+		"going_from" : "lucknow",
+		"date_time" : "25 Oct 2022",
+		"going_to" : "barely",
+		"created_by" : 1,        ----->user_id
+		"medium" : "bus",
+		"quantity" :10,
+		"type" : "packages",
+		"sensitivity" : "sensitive",
+		"delivered_to" :"Golu"
+	}   
+
+Post   /api/travel-info/accept    accept travel request:
+	{
+	    "travel_info_id":2,         ----> travel data id
+	    "accepted_by" :1             ----> user_id
+	}
+
+
+Get   /api/ride-info            get ride info:
+	params:  (also works with no params)
+	         user_id : int           ------> user_id
+
+Post   /api/ride-info            save ride info:
+	{
+		"going_from" : "lucknow",
+		"date_time" : "25 dec 2023",
+		"going_to" : "bareli",
+		"created_by" : 2,
+		"medium" : "truck",
+		"quantity" :20
+	}
+
+
+
